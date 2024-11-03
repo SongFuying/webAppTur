@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+        <input></input>
+        <button>提交</button>
+    <script>
+      //   const a = 1; //number
+      //   const b = "1"; //string
+      //   const c = true; //bool true false
+      //   //   console.log(typeof c);
+
+      //   //   console.log(Number(b)); //讲其他形式的数据转换为number格式
+
+      //   const d = null;
+      //   const e = undefined; //不会有人这样写 -> 证明程序有错误
+
+      //   const add = () => {
+      //     let c = 1 + 2;
+      //     //return c;
+      //   };
+      //   console.log(add());
+
+    // const a = 10000
+    // const b = '1'
+    // const c = 'abc'
+    // const numB = Number(c)
+    // const d = a + numB
+    // console.log(numB)
+    // console.log(3 === '3')
+
+    //如何定义创建一个量？常量 可变量 -> ES6才出的let const
+    // let a = 1
+    // const b = 2
+
+    // let a = c + 1
+    // console.log(a)
+    // console.log(c)
+
+    //var c = 3 //永远不要用他的 -> hosting 变量提升
+    //let c = 3 
+
+    //作用域 -> 最外层的叫全局作用域
+    //let和const是块级作用域 if{} -> let const 定义的变量只在块级作用域中有效
+    
+    let d = 1
+    if(d){
+        let c = d
+        console.log(`块级作用域内部的：${c}`)
+    }
+    console.log('外部的+' + c)
+
+    
+    </script>
+  </body>
+</html>
