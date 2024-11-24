@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  i 永远存在 不会被垃圾回收 -> 全局变量 -> 永远不会被回收 -> 所以非必要不要定义全局变量
+      let i = 1;
+      function a() {
+        i += 1;
+      }
+      a();
+      console.log(i);
+
+      //   function closure() {
+      //     let i = 1;
+      //     function a() {
+      //       i += 1;
+      //     }
+      //     a();
+      //     return i;
+      //   }
+      //   console.log(closure());
+
+      //非纯函数 -> 影响全局变量
+      //   let num = 1; //全局变量 隶属于Window.num -> Window是一个全局的OBJ
+      //   console.log(num);
+      //   function a(var1) {
+      //     num += var1; //num = num + var1;
+      //   }
+      //   a(2);
+      //   console.log(num);
+
+      //非纯函数 -> 相同输入 不同输出
+      //   let i = 1; //全局变量 定义在全局作用域 -> 不单独隶属于任何一个作用域
+      //   const a = (num) => {
+      //     i += 1;
+      //     return (result = num + i);
+      //   };
+      //   console.log(a(2)); //全局变量i = 2
+      //   console.log(a(2)); //全局变量i = 3
+      //   console.log(a(2));
+
+      //   //n是在for循环作用域
+      //   for (let n = 1; n < 19; n++) {
+      //     console.log(n);
+      //   }
+      //   console.log(n);
+
+      //   console.log(i);
+      //   console.log(n); //js代码是上到下执行 如果中间出现问题 后面不会执行
+
+      //   //普通函数 -> 调用才可以执行 -> 并且可以重复调用 重复执行
+      //   function a(var1) {
+      //     console.log("hello world" + var1);
+      //   }
+      //   //箭头函数
+      //   const b = (var2) => console.log("hello world" + var2);
+      //   //使用函数
+      //   a("dsd");
+      //   b();
+      //   a();
+
+      //   //立即执行函数 -> 只能执行一次 并且不能重复执行
+      //   (function () {
+      //     console.log("hello world");
+      //   })();
+
+      //   //箭头函数立即执行函数
+      //   (() => {})();
+    </script>
+  </body>
+</html>
