@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组对象 -> 数组中的每一项都是对象obj
+      // 函数 -> return 构造函数 new 原型链 回调函数callback
+
+      //定义函数 -> 但是不执行
+      //const a = () => console.log("callback"); //这就是一个梗 我说了
+
+      //执行函数
+      //a();
+
+      //回调函数 -> 只执行一次 执行过后就消失了 被垃圾回收gc
+      //setTimeout(() => console.log("callback"), 1000); //1000s之后执行函数 -> 收尾的时候把之前的梗抖出来
+
+      //return -> 如果不写return 函数不会返回任何值 只做内部程序的运行处理
+      //外部作用域 想用函数内部作用域的值的时候必须用return
+      //   let number = 2;
+      //   function b() {
+      //     number += 1;
+      //   }
+
+      //   function c(num = 1) {
+      //     return num + 1;
+      //   }
+
+      //   b();
+      //   console.log(number);
+      //   console.log(c());
+
+      //构造函数 -> 函数的首字母必须大写 -> 写库 自定义库
+      function A(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+      }
+      const person1 = new A("jack", "18", "free");
+      const person2 = new A("John", "20", "teacher");
+
+      console.log(person1);
+      console.log(person2);
+
+      //useState -> 备忘录新建
+      const newIem = {
+        id: arr.index,
+        title: "input.value",
+        date: new Date().toLocaleString(),
+        state: false, //false = unfinish true = done
+      };
+
+      const [list, setList] = useState([]);
+      setList(...list, newIem);
+
+      //异步 async await .then -> promise的三个状态 fulfilled resolve reject
+      async function get() {
+        const response = await new fetch("后端数据的api地址");
+        const data = await res.json();
+        return data;
+      }
+    </script>
+  </body>
+</html>
